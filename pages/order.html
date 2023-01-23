@@ -1,82 +1,87 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<style>
+			@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,400;1,600&display=swap");
+			* { font-family: Poppins; }
+
+			table, th, td {
+				border: 1px solid black;
+				border-radius: 10px;
+			}
+		</style>
 		<title>Pizzerija</title>
 		<link rel="shortcut icon" href="../pics/pizza-logo-design_9845-319.webp" type="image/x-icon">
 	</head>
 	<body background="../pics/wood-1846849.jpg">
 		<h1>Welcome to Pizza Palace</h1>
 		<form id="f">
-			<table cellspacing="25">
-				<tr>
-					<td>
-						<h2>Izaberite velicinu</h2>
-					</td>
-					<td>
-						<h2>Izaberite vrstu</h2>
-					</td>
-					<td>
-						<h2>Izaberite priloge</h2>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<input type="radio" name="size" value="mala">Mala<br>
-						<input type="radio" name="size" value="srednja">Srednja<br>
-						<input type="radio" name="size" value="velika">Velika<br>
-						<input type="radio" name="size" value="velika">XXL<br>
-					</td>
-					<td>
-						<input type="radio" name="pizza" value="sir">Margarita<br>
-						<input type="radio" name="pizza" value="feferoni">Feferoni<br>
-						<input type="radio" name="pizza" value="Margarita">Margarita<br>
-						<input type="radio" name="pizza" value="meso">Meso<br>
-					</td>
-					<td>
-						<input type="checkbox" name="toppings" value="pecurke">Pecurke<br>
-						<input type="checkbox" name="toppings" value="masline">Masline<br>
-						<input type="checkbox" name="toppings" value="papricice">Papricice<br>
-						<input type="checkbox" name="toppings" value="extra sir">Sunka<br>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<h2>Unesi poruku</h2>
-					</td>
-					<td>
-						<h2>Unesite adresu</h2>
-					</td>
-					<td>
-						<h2>Unesite vreme dostave</h2>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<input type="text" name="message" height="100">
-					</td>
-					<td>
-						<input type="text" name="adress" placeholder="Ulica"><br>
-					</td>
-				</tr>
-			</table>
-			<input type="submit" value="Naruci">
+			<font size="5">
+				<table cellspacing="25" align="center" padding>
+					<tr>
+						<td>
+							<h2>Izaberite velicinu</h2>
+						</td>
+						<td>
+							<h2>Izaberite vrstu</h2>
+						</td>
+						<td>
+							<h2>Izaberite priloge</h2>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="radio" name="size" value="mala">Mala<br>
+							<input type="radio" name="size" value="srednja">Srednja<br>
+							<input type="radio" name="size" value="velika">Velika<br>
+							<input type="radio" name="size" value="velika">XXL<br>
+						</td>
+						<td>
+							<input type="radio" name="pizza" value="sir">Margarita<br>
+							<input type="radio" name="pizza" value="feferoni">Feferoni<br>
+							<input type="radio" name="pizza" value="Margarita">Margarita<br>
+							<input type="radio" name="pizza" value="meso">Meso<br>
+						</td>
+						<td>
+							<input type="checkbox" name="toppings" value="pecurke">Pecurke<br>
+							<input type="checkbox" name="toppings" value="masline">Masline<br>
+							<input type="checkbox" name="toppings" value="papricice">Papricice<br>
+							<input type="checkbox" name="toppings" value="extra sir">Sunka<br>
+						</td>
+					</tr>
+					<tr>
+						<td align="center">
+							<h2>Unesi poruku</h2>
+						</td>
+						<td></td>
+						<td align="center">
+							<h2>Unesite adresu</h2>
+						</td>
+					</tr>
+					<tr align="center">
+						<td>
+							<input type="text" name="message">
+						</td>
+						<td>
+							<input type="submit" value="Naruci">
+						</td>
+						<td>
+							<input type="text" name="adress" placeholder="Ulica"><br>
+						</td>
+					</tr>
+				</table>
+			</font>
 		</form>
 		<div id="r">
-			<table>
+			<table align="center" border="1">
 				<td>
-					<p id="size"></p>
-				</td>
-				<td>
-					<p id="type"></p>
-				</td>
-				<td>
-					<p id="toppings"></p>
-				</td>
-				<td>
-					<p id="message"></p>
-				</td>
-				<td>
-					<p id="adress"></p>
+					<font size="10" align="center">
+						<p id="size"></p>
+						<p id="type"></p>
+						<p id="toppings"></p>
+						<p id="message"></p>
+						<p id="adress"></p>
+					</font>
 				</td>
 			</table>
 		</div>
@@ -85,14 +90,15 @@
 	<script>
 		const form = document.querySelector('form');
 
-		form.addEventListener('submit', (e) => {
-			e.preventDefault();
+		document.getElementById("r").style.display = "None";
+		document.getElementById("f").style.display = "Block";
+
+		form.addEventListener('submit', (event) => {
+			event.preventDefault();
 
 			const formData = new FormData(form);
 
 			data = Object.fromEntries(formData);
-
-			console.log(data);
 
 			document.getElementById("f").style.display = "None";
 			document.getElementById("r").style.display = "Block";
@@ -101,7 +107,7 @@
 			document.getElementById("type").innerHTML = `Tip: ${data['pizza']}`
 			document.getElementById("toppings").innerHTML = `Dodatci: ${data['toppings']}`
 			document.getElementById("message").innerHTML = `Poruka: ${data['message']}`
-			document.getElementById("adress").innerHTML = `Adresa: ${data['adresa']}`
+			document.getElementById("adress").innerHTML = `Adresa: ${data['adress']}`
 		})
 	</script>
 </html>

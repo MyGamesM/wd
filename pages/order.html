@@ -55,16 +55,16 @@
 						<input type="radio" name="size" value="XXL">XXL<br>
 					</td>
 					<td>
-						<input type="radio" name="pizza" value="Sir">Margarita<br>
+						<input type="radio" name="pizza" value="Margarita">Margarita<br>
 						<input type="radio" name="pizza" value="Feferoni">Feferoni<br>
-						<input type="radio" name="pizza" value="Margarita">Kaprićoza<br>
+						<input type="radio" name="pizza" value="Kaprićoza">Kaprićoza<br>
 						<input type="radio" name="pizza" value="Meso">Meso<br>
 					</td>
 					<td>
 						<input type="checkbox" name="topping1" value="Pečurke">Pečurke<br>
 						<input type="checkbox" name="topping2" value="Masline">Masline<br>
 						<input type="checkbox" name="topping3" value="Papričice">Papričice<br>
-						<input type="checkbox" name="topping4" value="Sunka">Sunka<br>
+						<input type="checkbox" name="topping4" value="Šunka">Šunka<br>
 					</td>
 				</tr>
 				<tr>
@@ -124,7 +124,7 @@
 		
 		document.getElementById("size").innerHTML = `Velicina: ${data['size'] || ''}`
 		document.getElementById("type").innerHTML = `Tip: ${data['pizza'] || ''}`
-		document.getElementById("toppings").innerHTML = `Dodatci: ${data['topping1'] || ''} ${data['topping2'] || ''} ${data['topping3'] || ''} ${data['topping4'] || ''}`
+		document.getElementById("toppings").innerHTML = `Dodaci: ${data['topping1'] || ''} ${data['topping2'] || ''} ${data['topping3'] || ''} ${data['topping4'] || ''}`
 		document.getElementById("adress").innerHTML = `Adresa: ${data['adress'] || ''}`
 		document.getElementById("total").innerHTML = `Cena: ${GetPrice(data) || ''}`
 	})
@@ -148,20 +148,11 @@
 				break;
 		}
 
-		switch (data['toppings']) {
-			case "Pečurke":
-				price += 200
-				break
-			case "Masline":
-				price += 250
-				break
-			case "Papricice":
-				price += 200
-				break
-			case "Sunka":
-				price += 300
-				break
-		}
+		if (data['topping1'] == "Pečurke") price += 200
+		if (data['topping2'] == "Masline") price += 250
+		if (data['topping3'] == "Papričice") price += 200
+		if (data['topping4'] == "Šunka") price += 300
+
 
 		return price
 	}

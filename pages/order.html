@@ -13,8 +13,8 @@
 		<title>Pizzerija</title>
 		<link rel="shortcut icon" href="../pics/pizza-logo-design_9845-319.webp" type="image/x-icon">
 	</head>
-	<body background="../pics/wood-1846849.jpg">
-		<h1>Welcome to Pizza Palace</h1>
+	<body background="../pics/CTT_WoodPanels-1.jpg">
+		<h1>Narudjbina</h1>
 		<form id="f">
 			<font size="5">
 				<table cellspacing="25" align="center" padding>
@@ -31,22 +31,22 @@
 					</tr>
 					<tr>
 						<td>
-							<input type="radio" name="size" value="mala">Mala<br>
-							<input type="radio" name="size" value="srednja">Srednja<br>
-							<input type="radio" name="size" value="velika">Velika<br>
-							<input type="radio" name="size" value="velika">XXL<br>
+							<input type="radio" name="size" value="Mala">Mala<br>
+							<input type="radio" name="size" value="Srednja">Srednja<br>
+							<input type="radio" name="size" value="Velika">Velika<br>
+							<input type="radio" name="size" value="XXL">XXL<br>
 						</td>
 						<td>
-							<input type="radio" name="pizza" value="sir">Margarita<br>
-							<input type="radio" name="pizza" value="feferoni">Feferoni<br>
+							<input type="radio" name="pizza" value="Sir">Margarita<br>
+							<input type="radio" name="pizza" value="Feferoni">Feferoni<br>
 							<input type="radio" name="pizza" value="Margarita">Margarita<br>
-							<input type="radio" name="pizza" value="meso">Meso<br>
+							<input type="radio" name="pizza" value="Meso">Meso<br>
 						</td>
 						<td>
-							<input type="checkbox" name="toppings" value="pecurke">Pecurke<br>
-							<input type="checkbox" name="toppings" value="masline">Masline<br>
-							<input type="checkbox" name="toppings" value="papricice">Papricice<br>
-							<input type="checkbox" name="toppings" value="extra sir">Sunka<br>
+							<input type="checkbox" name="topping1" value="Pecurke">Pecurke<br>
+							<input type="checkbox" name="topping2" value="Masline">Masline<br>
+							<input type="checkbox" name="topping3" value="Papricice">Papricice<br>
+							<input type="checkbox" name="topping4" value="Sunka">Sunka<br>
 						</td>
 					</tr>
 					<tr>
@@ -60,7 +60,7 @@
 					</tr>
 					<tr align="center">
 						<td>
-							<input type="text" name="message">
+							<input type="text" name="message" placeholder="Poruka">
 						</td>
 						<td>
 							<input type="submit" value="Naruci">
@@ -79,7 +79,7 @@
 						<p id="size"></p>
 						<p id="type"></p>
 						<p id="toppings"></p>
-						<p id="message"></p>
+						<p id="total"></p>
 						<p id="adress"></p>
 					</font>
 				</td>
@@ -103,11 +103,48 @@
 			document.getElementById("f").style.display = "None";
 			document.getElementById("r").style.display = "Block";
 			
-			document.getElementById("size").innerHTML = `Velicina: ${data['size']}`
-			document.getElementById("type").innerHTML = `Tip: ${data['pizza']}`
-			document.getElementById("toppings").innerHTML = `Dodatci: ${data['toppings']}`
-			document.getElementById("message").innerHTML = `Poruka: ${data['message']}`
-			document.getElementById("adress").innerHTML = `Adresa: ${data['adress']}`
+			document.getElementById("size").innerHTML = `Velicina: ${data['size'] || ''}`
+			document.getElementById("type").innerHTML = `Tip: ${data['pizza'] || ''}`
+			document.getElementById("toppings").innerHTML = `Dodatci: ${data['topping1'] || ''} ${data['topping2'] || ''} ${data['topping3'] || ''} ${data['topping4'] || ''}`
+			document.getElementById("adress").innerHTML = `Adresa: ${data['adress'] || ''}`
+			document.getElementById("total").innerHTML = `Cena: ${GetPrice(data) || ''}`
 		})
+
+		function GetPrice(data) {
+			let price = 0
+			switch (data['size']) {
+				case "Mala":
+					price += 500
+					break;
+				case "Srednja":
+					price += 700
+					break;
+				case "Velika":
+					price += 900
+					break;
+				case "XXL":
+					price += 1200
+					break;
+				default:
+					break;
+			}
+
+			switch (data['toppings']) {
+				case "Pecurke":
+					price += 200
+					break
+				case "Masline":
+					price += 250
+					break
+				case "Papricice":
+					price += 200
+					break
+				case "Sunka":
+					price += 300
+					break
+			}
+
+			return price
+		}
 	</script>
 </html>

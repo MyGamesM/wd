@@ -2,78 +2,97 @@
 <html>
 	<head>
 		<style>
-			@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,400;1,600&display=swap");
-			* { font-family: Poppins; }
+			@import url('https://fonts.googleapis.com/css2?family=Felipa&display=swap');
+			* { font-family: felipa; }
 
-			table, th, td {
-				border: 1px solid black;
-				border-radius: 10px;
+			.input {
+				width: 100px;
+				height: 25px;
+				font-family: Arial;
 			}
-		</style>
+			</style>
 		<title>Pizzerija</title>
-		<link rel="shortcut icon" href="../pics/pizza-logo-design_9845-319.webp" type="image/x-icon">
-	</head>
-	<body background="../pics/CTT_WoodPanels-1.jpg">
-		<h1>Narudjbina</h1>
-		<form id="f">
-			<font size="5">
-				<table cellspacing="25" align="center" padding>
-					<tr>
-						<td>
-							<h2>Izaberite velicinu</h2>
-						</td>
-						<td>
-							<h2>Izaberite vrstu</h2>
-						</td>
-						<td>
-							<h2>Izaberite priloge</h2>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<input type="radio" name="size" value="Mala">Mala<br>
-							<input type="radio" name="size" value="Srednja">Srednja<br>
-							<input type="radio" name="size" value="Velika">Velika<br>
-							<input type="radio" name="size" value="XXL">XXL<br>
-						</td>
-						<td>
-							<input type="radio" name="pizza" value="Sir">Margarita<br>
-							<input type="radio" name="pizza" value="Feferoni">Feferoni<br>
-							<input type="radio" name="pizza" value="Margarita">Margarita<br>
-							<input type="radio" name="pizza" value="Meso">Meso<br>
-						</td>
-						<td>
-							<input type="checkbox" name="topping1" value="Pecurke">Pecurke<br>
-							<input type="checkbox" name="topping2" value="Masline">Masline<br>
-							<input type="checkbox" name="topping3" value="Papricice">Papricice<br>
-							<input type="checkbox" name="topping4" value="Sunka">Sunka<br>
-						</td>
-					</tr>
-					<tr>
-						<td align="center">
-							<h2>Unesi poruku</h2>
-						</td>
-						<td></td>
-						<td align="center">
-							<h2>Unesite adresu</h2>
-						</td>
-					</tr>
-					<tr align="center">
-						<td>
-							<input type="text" name="message" placeholder="Poruka">
-						</td>
-						<td>
-							<input type="submit" value="Naruci">
-						</td>
-						<td>
-							<input type="text" name="adress" placeholder="Ulica"><br>
-						</td>
-					</tr>
-				</table>
-			</font>
-		</form>
-		<div id="r">
-			<table align="center" border="1">
+	<link rel="shortcut icon" href="../`pics/logo.webp">
+</head>
+<body background="../pics/bg.jpg">
+	<table width="100%" bgcolor="#800">
+		<tr>
+			<td width="33%">
+				<img src="../pics/logo.webp" width="100">
+			</td>
+			<td align="center" width="33%">
+				<font size="10">
+					<a href="../index.html"><font color="#fff">Glavna Stranica</font></a>
+				</font>
+			</td>
+			<td align="center" width="33%">
+				<font size="10">
+					<a href="../pages/order.html"><font color="#fff">Narudzbina</font></a>
+				</font>
+			</td>
+		</tr>
+	</table>
+	<h1>Narudjbina</h1>
+	<form id="f">
+		<font size="6" color="#fff">
+			<table cellspacing="25" align="center" padding>
+				<tr>
+					<td>
+						<h2>Izaberite veličinu</h2>
+					</td>
+					<td>
+						<h2>Izaberite vrstu</h2>
+					</td>
+					<td>
+						<h2>Izaberite priloge</h2>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="radio" name="size" value="Mala">Mala<br>
+						<input type="radio" name="size" value="Srednja">Srednja<br>
+						<input type="radio" name="size" value="Velika">Velika<br>
+						<input type="radio" name="size" value="XXL">XXL<br>
+					</td>
+					<td>
+						<input type="radio" name="pizza" value="Sir">Margarita<br>
+						<input type="radio" name="pizza" value="Feferoni">Feferoni<br>
+						<input type="radio" name="pizza" value="Margarita">Kaprićoza<br>
+						<input type="radio" name="pizza" value="Meso">Meso<br>
+					</td>
+					<td>
+						<input type="checkbox" name="topping1" value="Pečurke">Pečurke<br>
+						<input type="checkbox" name="topping2" value="Masline">Masline<br>
+						<input type="checkbox" name="topping3" value="Papričice">Papričice<br>
+						<input type="checkbox" name="topping4" value="Sunka">Sunka<br>
+					</td>
+				</tr>
+				<tr>
+					<td align="center">
+						<h2>Unesi poruku</h2>
+					</td>
+					<td></td>
+					<td align="center">
+						<h2>Unesite adresu</h2>
+					</td>
+				</tr>
+				<tr align="center">
+					<td>
+						<input type="text" name="message" placeholder="Poruka" class="input">
+					</td>
+					<td>
+						<input type="submit" value="Naruci" class="input">
+					</td>
+					<td>
+						<input type="text" name="adress" placeholder="Ulica" class="input">
+					</td>
+				</tr>
+			</table>
+		</font>
+	</form>
+	<div id="r">
+		<font color="#fff">
+			<table align="center">
 				<td>
 					<font size="10" align="center">
 						<p id="size"></p>
@@ -84,67 +103,67 @@
 					</font>
 				</td>
 			</table>
-		</div>
-	</body>
+		</font>
+	</div>
+</body>
+<script>
+	const form = document.querySelector('form');
 
-	<script>
-		const form = document.querySelector('form');
+	document.getElementById("r").style.display = "None";
+	document.getElementById("f").style.display = "Block";
 
-		document.getElementById("r").style.display = "None";
-		document.getElementById("f").style.display = "Block";
+	form.addEventListener('submit', (event) => {
+		event.preventDefault();
 
-		form.addEventListener('submit', (event) => {
-			event.preventDefault();
+		const formData = new FormData(form);
 
-			const formData = new FormData(form);
+		data = Object.fromEntries(formData);
 
-			data = Object.fromEntries(formData);
+		document.getElementById("f").style.display = "None";
+		document.getElementById("r").style.display = "Block";
+		
+		document.getElementById("size").innerHTML = `Velicina: ${data['size'] || ''}`
+		document.getElementById("type").innerHTML = `Tip: ${data['pizza'] || ''}`
+		document.getElementById("toppings").innerHTML = `Dodatci: ${data['topping1'] || ''} ${data['topping2'] || ''} ${data['topping3'] || ''} ${data['topping4'] || ''}`
+		document.getElementById("adress").innerHTML = `Adresa: ${data['adress'] || ''}`
+		document.getElementById("total").innerHTML = `Cena: ${GetPrice(data) || ''}`
+	})
 
-			document.getElementById("f").style.display = "None";
-			document.getElementById("r").style.display = "Block";
-			
-			document.getElementById("size").innerHTML = `Velicina: ${data['size'] || ''}`
-			document.getElementById("type").innerHTML = `Tip: ${data['pizza'] || ''}`
-			document.getElementById("toppings").innerHTML = `Dodatci: ${data['topping1'] || ''} ${data['topping2'] || ''} ${data['topping3'] || ''} ${data['topping4'] || ''}`
-			document.getElementById("adress").innerHTML = `Adresa: ${data['adress'] || ''}`
-			document.getElementById("total").innerHTML = `Cena: ${GetPrice(data) || ''}`
-		})
-
-		function GetPrice(data) {
-			let price = 0
-			switch (data['size']) {
-				case "Mala":
-					price += 500
-					break;
-				case "Srednja":
-					price += 700
-					break;
-				case "Velika":
-					price += 900
-					break;
-				case "XXL":
-					price += 1200
-					break;
-				default:
-					break;
-			}
-
-			switch (data['toppings']) {
-				case "Pecurke":
-					price += 200
-					break
-				case "Masline":
-					price += 250
-					break
-				case "Papricice":
-					price += 200
-					break
-				case "Sunka":
-					price += 300
-					break
-			}
-
-			return price
+	function GetPrice(data) {
+		let price = 0
+		switch (data['size']) {
+			case "Mala":
+				price += 500
+				break;
+			case "Srednja":
+				price += 700
+				break;
+			case "Velika":
+				price += 900
+				break;
+			case "XXL":
+				price += 1200
+				break;
+			default:
+				break;
 		}
-	</script>
+
+		switch (data['toppings']) {
+			case "Pečurke":
+				price += 200
+				break
+			case "Masline":
+				price += 250
+				break
+			case "Papricice":
+				price += 200
+				break
+			case "Sunka":
+				price += 300
+				break
+		}
+
+		return price
+	}
+</script>
 </html>
